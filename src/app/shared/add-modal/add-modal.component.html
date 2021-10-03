@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h6 class="modal-title">Add Employee</h6>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="login-page" [@routerTransition]>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <form [formGroup]="fm">
+                    <!--<form [formGroup]="fm">-->
+                    <div class="form-content">
+                        <div class="input-title">First Name:</div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg" formControlName="firstName"
+                                   id="firstName" #firstName placeholder="">
+                        </div>
+                        <div class="input-title">Last Name:</div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg" formControlName="lastName"
+                                   id="lastName" #lastName placeholder="">
+                        </div>
+                        <div class="input-title">Email:</div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg"
+                                   formControlName="email"
+                                   id="email" #email placeholder="">
+                        </div>
+                        <div class="input-title">ID:</div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-underline input-lg" formControlName="id"
+                                   id="id" #id placeholder="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--<input type="text" class="form-control input-underline input-lg" name="orgID"  placeholder="{{ 'Org ID' | translate }}" #test>-->
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-outline-dark"
+            (click)="addEmployee(firstName.value, lastName.value, email.value, id.value)">Save
+    </button>
+</div>
+

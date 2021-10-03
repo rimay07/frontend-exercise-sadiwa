@@ -1,0 +1,37 @@
+<div [@routerTransition]>
+    <h2 class="text-muted">Employee List</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-6">
+                <div class="card-header">
+                    <div align="center">
+                        <button class="btn btn-info btn-sm" (click)="loadModal(1)">Add Employee</button>
+                        <button class="btn btn-info btn-sm" (click)="loadModal(2)">Remove Employee</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="width:100%; display: block; overflow:auto;"  [ngStyle]="{'height': tableHeight + 'px'}" class="tableFonts">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" *ngFor="let header of tableHeaderArr" class="headerCol">{{header}}</th>
+                            </tr>
+                            </thead>
+                            <!--<tbody id="tableValues" [innerHtml]="allTableValues | safeHtml"> -->
+                            <tbody>
+                                <tr *ngFor = "let row of employeeList">
+                                    <td *ngFor = "let column of tableColArr">
+                                        {{row[column]}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
